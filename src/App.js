@@ -1,23 +1,56 @@
-import logo from './logo.svg';
+import React, { useEffect, useState } from 'react';
+import { FaArrowUp } from 'react-icons/fa';
 import './App.css';
+import Navbar from './components/Navbar/Navbar';
+import Home from './components/Home/Home';
+import About from './components/About/About';
+import Skills from './components/Skills/Skills';
+import Projects from './components/Projects/Projects';
+import Contact from './components/Contact/Contact';
+import Footer from './components/Footer/Footer';
 
 function App() {
+  const [showScroll, setShowScroll] = useState(false);
+
+  useEffect(() => {
+    const checkScroll = () => {
+      if (!showScroll && window.pageYOffset > 300) {
+        setShowScroll(true);
+      } else if (showScroll && window.pageYOffset <= 300) {
+        setShowScroll(false);
+      }
+    };
+
+    window.addEventListener('scroll', checkScroll);
+    return () => window.removeEventListener('scroll', checkScroll);
+  }, [showScroll]);
+
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
+      <Navbar />
+      <main>
+        <Home />
+        <About />
+        <Skills />
+        <Projects />
+        <Contact />
+      </main>
+      <Footer />
+      
+      {/* Scroll to Top Button */}
+      {showScroll && (
+        <button 
+          onClick={scrollToTop} 
+          className="scroll-to-top"
+          aria-label="Scroll to top"
         >
-          Learn React
-        </a>
-      </header>
+          <FaArrowUp />
+        </button>
+      )}
     </div>
   );
 }
