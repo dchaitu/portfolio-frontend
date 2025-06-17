@@ -1,16 +1,7 @@
 import React from 'react';
 import './Skills.css';
+import { skills } from '../../constants/Constants';
 
-const skills = [
-  { name: 'HTML', level: 90 },
-  { name: 'CSS', level: 85 },
-  { name: 'JavaScript', level: 80 },
-  { name: 'React', level: 85 },
-  { name: 'Node.js', level: 70 },
-  { name: 'Git', level: 80 },
-  { name: 'Responsive Design', level: 90 },
-  { name: 'UI/UX', level: 75 },
-];
 
 const Skills = () => {
   return (

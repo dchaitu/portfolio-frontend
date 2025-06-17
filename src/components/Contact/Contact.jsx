@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './Contact.css';
-
+import { contactDetails } from '../../constants/Constants';
+import Social from '../Social/Social';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -62,7 +63,7 @@ const Contact = () => {
               <i className="fas fa-envelope"></i>
               <div>
                 <h4>Email</h4>
-                <a href="mailto:your.email@example.com">your.email@example.com</a>
+                <a href="mailto:{contactDetails.email}">{contactDetails.email}</a>
               </div>
             </div>
             
@@ -70,7 +71,7 @@ const Contact = () => {
               <i className="fas fa-phone"></i>
               <div>
                 <h4>Phone</h4>
-                <a href="tel:+1234567890">+1 (234) 567-890</a>
+                <a href="tel:{contactDetails.phone}">{contactDetails.phone}</a>
               </div>
             </div>
             
@@ -78,24 +79,11 @@ const Contact = () => {
               <i className="fas fa-map-marker-alt"></i>
               <div>
                 <h4>Location</h4>
-                <p>Your City, Country</p>
+                <p>{contactDetails.location}</p>
               </div>
             </div>
             
-            <div className="social-links">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram"></i>
-              </a>
-            </div>
+            <Social/>
           </div>
           
           <div className="contact-form">

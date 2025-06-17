@@ -1,5 +1,8 @@
 import React from 'react';
 import './Footer.css';
+import { contactDetails } from '../../constants/Constants';
+import Social from '../Social/Social';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -16,38 +19,20 @@ const Footer = () => {
           <div className="footer-links">
             <h4>Quick Links</h4>
             <ul>
-              <li><a href="#home">Home</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#projects">Projects</a></li>
-              <li><a href="#contact">Contact</a></li>
+              <li><Link to="/">Home</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/skills">Skills</Link></li>
+              <li><Link to="/projects">Projects</Link></li>
+              <li><Link to="/contact">Contact</Link></li>
             </ul>
           </div>
           
-          <div className="footer-contact">
-            <h4>Contact Info</h4>
-            <ul>
-              <li><i className="fas fa-envelope"></i> your.email@example.com</li>
-              <li><i className="fas fa-phone"></i> +1 (234) 567-890</li>
-              <li><i className="fas fa-map-marker-alt"></i> Your City, Country</li>
-            </ul>
-          </div>
           
           <div className="footer-social">
             <h4>Follow Me</h4>
+            
             <div className="social-links">
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                <i className="fab fa-github"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-                <i className="fab fa-linkedin-in"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Twitter">
-                <i className="fab fa-twitter"></i>
-              </a>
-              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="Instagram">
-                <i className="fab fa-instagram"></i>
-              </a>
+            <Social/>
             </div>
           </div>
         </div>

@@ -52,14 +52,8 @@ const Home = () => {
 
         <p>I build amazing web experiences with modern technologies</p>
         <div className="cta-buttons">
-          <a href="#contact" className="btn btn-primary">Hire Me</a>
-          <a href="#projects" className="btn btn-secondary">View My Work</a>
-        </div>
-      </div>
-      <div className="home-image">
-        <div className="image-placeholder">
-          {/* Replace with your image */}
-          <span>Your Image</span>
+          <a href="/contact" className="btn btn-primary">Hire Me</a>
+          <a href="/projects" className="btn btn-secondary">View My Work</a>
         </div>
       </div>
     </section>

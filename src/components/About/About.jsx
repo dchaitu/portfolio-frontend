@@ -1,5 +1,6 @@
 import React from 'react';
 import './About.css';
+import { aboutDetails, contactDetails } from '../../constants/Constants';
 
 const About = () => {
   return (
@@ -9,38 +10,34 @@ const About = () => {
         <div className="about-content">
           <div className="about-image">
             <div className="image-placeholder">
-              <span>Chaitanya Bharat</span>
+              {/* <span>{contactDetails.fullName}</span> */}
+            <img src={contactDetails.photo} alt={contactDetails.fullName} />
             </div>
           </div>
           <div className="about-text">
-            <h3>I'm a Passionate Frontend Developer</h3>
+            <h3>{contactDetails.role}</h3>
             <p>
-              Hello! I'm a frontend developer with a passion for creating beautiful and functional web applications. 
-              I specialize in React.js and modern JavaScript frameworks, and I love turning ideas into reality through code.
-            </p>
-            <p>
-              With a strong foundation in web technologies and a keen eye for design, I create seamless user experiences 
-              that are both visually appealing and highly functional.
+            {aboutDetails.aboutMe}
             </p>
             <div className="about-details">
               <div className="detail-item">
                 <span>Name:</span>
-                <p>Chaitanya Bharat</p>
+                <p>{contactDetails.fullName}</p>
               </div>
               <div className="detail-item">
                 <span>Email:</span>
-                <p>chaitanyadokara@gmail.com</p>
+                <p>{contactDetails.email}</p>
               </div>
               <div className="detail-item">
                 <span>Experience:</span>
-                <p>4 Years</p>
+                <p>{contactDetails.experience}</p>
               </div>
               <div className="detail-item">
                 <span>Location:</span>
-                <p>Hyderabad, India</p>
+                <p>{contactDetails.location}</p>
               </div>
             </div>
-            <a href="#" className="btn btn-primary">Download CV</a>
+            <a href="/files/chaitanya_resume.pdf" className="btn btn-primary">Download CV</a>
           </div>
         </div>
       </div>
