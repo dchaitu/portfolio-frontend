@@ -52,16 +52,16 @@ export const projects = [
 export const skills = [
     { name: 'Python', level: 100 },
     { name: 'SQL', level: 100 },
+    { name: 'AWS', level: 90 },
     { name: 'Git', level: 100 },
+    { name: 'Flutter', level: 90 },
     { name: 'Responsive Design', level: 90 },
     { name: 'HTML', level: 90 },
     { name: 'CSS', level: 85 },
     { name: 'JavaScript', level: 80 },
     { name: 'React', level: 85 },
-    { name: 'Flutter', level: 80 },
     { name: 'Framer', level: 75 },
     { name: 'Webflow', level: 75 },
-    { name: 'AWS', level: 75 },
 
   ];
 

@@ -4,6 +4,7 @@
   align-items: center;
   padding: 6rem 2rem 2rem;
   background-color: #f8f9fa;
+  justify-content: center;
 }
 
 .home-content {

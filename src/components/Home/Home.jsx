@@ -6,7 +6,7 @@ const Home = () => {
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
   const [typingSpeed, setTypingSpeed] = useState(150);
-  const roles = ['Chaitanya Bharat','Python Developer', 'Cloud Practitioner', 'Flutter Developer', 'React Developer'];
+  const roles = ['Chaitanya Bharat','a Python Developer', 'a Cloud Practitioner', 'a Flutter Developer', 'a React Developer'];
   const timeoutRef = useRef(null);
 
   useEffect(() => {
