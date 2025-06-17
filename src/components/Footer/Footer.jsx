@@ -12,7 +12,7 @@ const Footer = () => {
       <div className="container">
         <div className="footer-content">
           <div className="footer-logo">
-            <h3>Portfolio</h3>
+            <h3> {contactDetails.name}  </h3>
             <p>Turning ideas into reality through code and design.</p>
           </div>
           
@@ -38,7 +38,7 @@ const Footer = () => {
         </div>
         
         <div className="footer-bottom">
-          <p>&copy; {currentYear} Your Name. All rights reserved.</p>
+          <p>&copy; {currentYear} {contactDetails.name}. All rights reserved.</p>
           <div className="footer-legal">
             <a href="#">Privacy Policy</a>
             <span>•</span>

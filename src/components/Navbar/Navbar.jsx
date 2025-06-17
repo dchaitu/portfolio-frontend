@@ -12,10 +12,11 @@ const Navbar = () => {
   return (
     <nav className="navbar">
       <div className="nav-container">
-        <div className="logo">Portfolio</div>
+        <div className="logo">
+        <Link to="/" onClick={() => setIsOpen(false)}>Chaitanya Bharat</Link>
+        </div>
         
         <div className={`nav-links ${isOpen ? 'active' : ''}`}>
-          <Link to="/" onClick={() => setIsOpen(false)}>Home</Link>
           <Link to="/about" onClick={() => setIsOpen(false)}>About</Link>
           <Link to="/skills" onClick={() => setIsOpen(false)}>Skills</Link>
           <Link to="/projects" onClick={() => setIsOpen(false)}>Projects</Link>
