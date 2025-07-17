@@ -6,8 +6,10 @@ export const contactDetails = {
     role:"Python Backend Developer",
     experience:"4 Years",
     fullName:"Chaitanya Bharat Dokara",
-    photo:"https://chaitanya-website-portfolio.s3.eu-north-1.amazonaws.com/chaitu_photo.jpg",
-}
+    photo:"https://chaitanya-website-portfolio.s3.eu-north-1.amazonaws.com/chaitu_pic.jpg",
+    completeBio:"I have completed my B.tech in GITAM University with 8.22 GPA. I started my career as a Content Developer at IBHubs from 2020. Here I have worked in creating problem statements, hints and solutions in python language. After I have worked as a Flutter App Developer with Riverpod. Then I worked as Python Backend Developer using Django framework and created REST APIs for projects and also then created functionality tests using Pytest and did API tests using Postman. Iam also a certified Cloud Practitioner. I have Built full stack web applications using ReactJS, Bootstrap, Tailwind and Django frameworks.  I also built mobile applications using Flutter. For a small duration I worked as Quality Tester for Content Translation."
+
+  }
 
 export const socialLinks = {
     github: "https://github.com/dchaitu",
@@ -44,24 +46,32 @@ export const projects = [
       description: 'A word-guessing game where players try to guess a hidden word in a limited number of attempts.',
       technologies: ['Flutter', 'Dart', 'Riverpod', "AWS","DynamoDB"],
       image: '/images/wordle.png',
-      link:"https://d2njf4cshb8ko.cloudfront.net/",
+      link:"https://wordle.chaitanyadokara.in/",
     }
   ];
 
 
+export const programming_languages = [
+    "Python","C++","SQL",
+]
+
+export const web_development = ["HTML","CSS","Bootstrap","Tailwind","JavaScript","ReactJS"]
+
+export const mobile_development = ["Flutter","Dart","Riverpod"]
+
+export const backend_development = ["Django","Django Rest Framework","Flask","FastAPI"]
+
+export const cloud_services = ["AWS"]
+
+export const no_code = ["Framer","Webflow"]
+
+
 export const skills = [
-    { name: 'Python', level: 100 },
-    { name: 'SQL', level: 100 },
-    { name: 'AWS', level: 90 },
-    { name: 'Git', level: 100 },
-    { name: 'Flutter', level: 90 },
-    { name: 'Responsive Design', level: 90 },
-    { name: 'HTML', level: 90 },
-    { name: 'CSS', level: 85 },
-    { name: 'JavaScript', level: 80 },
-    { name: 'React', level: 85 },
-    { name: 'Framer', level: 75 },
-    { name: 'Webflow', level: 75 },
+  {name:"Programming Languages",technologies:programming_languages},
+  {name:"Web Development",technologies:web_development},
+  {name:"Mobile Development",technologies:mobile_development},
+  {name:"Backend Development",technologies:backend_development},
+  {name:"Cloud Services",technologies:cloud_services},
+  {name:"No Code",technologies:no_code},
 
-  ];
-
+];

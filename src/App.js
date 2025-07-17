@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import { FaArrowUp } from 'react-icons/fa';
-import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar/Navbar';
 import Home from './components/Home/Home';
@@ -9,6 +9,7 @@ import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
+import './App.css';
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);
@@ -31,30 +32,34 @@ function App() {
   };
 
   return (
-    <Router>
-    <div className="App">
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/about" element={<About />} />
-        <Route path="/skills" element={<Skills />} />
-        <Route path="/projects" element={<Projects />} />
-        <Route path="/contact" element={<Contact />} />
-      </Routes>
-      <Footer />
-      
-      {/* Scroll to Top Button */}
-      {showScroll && (
-        <button 
-          onClick={scrollToTop} 
-          className="scroll-to-top"
-          aria-label="Scroll to top"
-        >
-          <FaArrowUp />
-        </button>
-      )}
-    </div>
-    </Router>
+    <ThemeProvider>
+      <Router>
+        <div className="App">
+          <Navbar />
+          <div className="app-content">
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/skills" element={<Skills />} />
+              <Route path="/projects" element={<Projects />} />
+              <Route path="/contact" element={<Contact />} />
+            </Routes>
+          </div>
+          <Footer />
+          
+          {/* Scroll to Top Button */}
+          {showScroll && (
+            <button 
+              onClick={scrollToTop} 
+              className="scroll-to-top"
+              aria-label="Scroll to top"
+            >
+              <FaArrowUp />
+            </button>
+          )}
+        </div>
+      </Router>
+    </ThemeProvider>
   );
 }
 

@@ -1,5 +1,7 @@
 import { socialLinks } from "../../constants/Constants";
-import { FaGithub, FaLinkedin, FaUbuntu } from 'react-icons/fa';
+import { FaGithub, FaLinkedin } from 'react-icons/fa';
+import { SiUpwork } from "react-icons/si";
+
 const Social = () => {
     return (
         <div className="social-links">
@@ -10,8 +12,7 @@ const Social = () => {
                 <FaLinkedin />
             </a>
             <a href={socialLinks.upwork} target="_blank" rel="noopener noreferrer" aria-label="Upwork">
-                {/* TODO: Add Upwork link */}
-                <FaUbuntu />
+                <SiUpwork />
             </a>
         </div>
     );

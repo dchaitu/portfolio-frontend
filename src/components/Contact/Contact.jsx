@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import './Contact.css';
+import { useTheme } from '../../context/ThemeContext';
 import { contactDetails } from '../../constants/Constants';
 import Social from '../Social/Social';
+import './Contact.css';
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -49,8 +50,35 @@ const Contact = () => {
     }, 1500);
   };
 
+  const { theme } = useTheme();
+  
   return (
-    <section id="contact" className="contact">
+    <section 
+      id="contact" 
+      className="contact" 
+      style={{
+        '--primary-color': theme.primaryColor,
+        '--primary-dark': theme.primaryDark,
+        '--bg-color': theme.bgColor,
+        '--text-color': theme.textColor,
+        '--text-light': theme.textLight,
+        '--card-bg': theme.cardBg,
+        '--card-shadow': theme.cardShadow,
+        '--border-color': theme.borderColor,
+        '--input-bg': theme.inputBg,
+        '--focus-shadow': theme.focusShadow,
+        '--btn-shadow': theme.btnShadow,
+        '--btn-hover-shadow': theme.btnHoverShadow,
+        '--disabled-bg': theme.disabledBg,
+        '--success-bg': theme.successBg,
+        '--success-text': theme.successText,
+        '--success-border': theme.successBorder,
+        '--error-bg': theme.errorBg,
+        '--error-text': theme.errorText,
+        '--error-border': theme.errorBorder,
+        backgroundColor: theme.bgColor,
+      }}
+    >
       <div className="container">
         <h2 className="section-title">Get In <span>Touch</span></h2>
         
@@ -144,10 +172,15 @@ const Contact = () => {
               
               <button 
                 type="submit" 
-                className="btn btn-primary"
+                className="btn-submit" 
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? (
+                  <>
+                    <span className="spinner"></span>
+                    Sending...
+                  </>
+                ) : 'Send Message'}
               </button>
             </form>
           </div>

@@ -1,7 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { Link } from 'react-router-dom';
+import { useTheme } from '../../context/ThemeContext';
 import './Home.css';
 
 const Home = () => {
+  const { theme } = useTheme();
   const [text, setText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
   const [loopNum, setLoopNum] = useState(0);
@@ -45,16 +48,33 @@ const Home = () => {
   }, []);
 
   return (
-    <section id="home" className="home">
+    <section id="home" className="home" style={{
+      '--primary-color': theme.primaryColor,
+      '--primary-dark': theme.primaryDark,
+      '--bg-color': theme.bgColor,
+      '--bg-light': theme.bgLight,
+      '--text-color': theme.textColor,
+      '--text-light': theme.textLight,
+      backgroundColor: theme.bgColor,
+    }}>
       <div className="home-content">
-        <h1>Hi, I'm <span className="typing-text"> {text}</span>
-        <span className="cursor"></span></h1>
-
-        <p>I build amazing web experiences with modern technologies</p>
-        <div className="cta-buttons">
-          <a href="/contact" className="btn btn-primary">Hire Me</a>
-          <a href="/projects" className="btn btn-secondary">View My Work</a>
+        <div className="content">
+          <h1 className="title">
+            Hi, I'm <span className="highlight">{text}</span>
+          </h1>
+          <p className="subtitle">
+            A passionate developer building amazing web experiences
+          </p>
+          <div className="cta-buttons">
+            <Link to="/contact" className="primary-button">
+              Hire Me
+            </Link>
+            <Link to="/projects" className="secondary-button">
+              View My Work
+            </Link>
+          </div>
         </div>
+
       </div>
     </section>
   );
