@@ -100,7 +100,10 @@ const Contact = () => {
         '--success-border': theme.successBorder,
         '--error-bg': theme.errorBg,
         '--error-text': theme.errorText,
-        '--error-border': theme.errorBorder,
+        '--card-secondary-bg': theme.cardSecondaryBg,
+        '--contact-info-bg': theme.contactInfoBg,
+        '--contact-info-text': theme.contactInfoText,
+        '--contact-info-text-light': theme.contactInfoTextLight,
         backgroundColor: theme.bgColor,
       }}
     >

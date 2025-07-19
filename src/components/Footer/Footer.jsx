@@ -9,7 +9,11 @@ const Footer = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className={styles.footer}>
+    <footer className={styles.footer} style={{
+      '--footer-bg': theme.footerBg,
+      '--footer-text': theme.footerText,
+      '--footer-icon-color': theme.footerIconColor,
+    }}>
       <div className={styles.container}>
         <div className={styles.footerContent}>
           <div className={styles.footerSection}>

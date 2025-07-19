@@ -16,7 +16,13 @@ export const lightTheme = {
   navText: '#ecf0f1',
   buttonBg: '#3498db',
   buttonText: '#ffffff',
-  footerBg: '#2c3e50'
+  cardSecondaryBg: '#34495e',
+  contactInfoBg: '#2c3e50',
+  contactInfoText: '#ffffff',
+  contactInfoTextLight: '#090909',
+  footerBg: '#f1f5f9',
+  footerText: '#475569',
+  footerIconColor: '#3498db'
 };
 
 export const darkTheme = {
@@ -37,5 +43,12 @@ export const darkTheme = {
   navText: '#f8f9fa',
   buttonBg: '#4dabf7',
   buttonText: '#212529',
-  footerBg: '#2c3e50',
+  cardSecondaryBg: '#2c3e50',
+  contactInfoBg: '#1a1e21',
+  contactInfoText: '#f8f9fa',
+  contactInfoTextLight: '#adb5bd',
+  footerBg: '#1e293b',
+  footerText: '#94a3b8',
+  footerIconColor: '#4dabf7',
+  // footerBg: '#2c3e50',
 };

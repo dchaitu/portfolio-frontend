@@ -1,6 +1,6 @@
 .footer {
-  background-color: var(--bg-secondary);
-  color: var(--text-light);
+  background-color: var(--footer-bg, #f1f5f9);
+  color: var(--footer-text, #475569);
   padding: 4rem 0 0;
   margin-top: auto;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -202,7 +202,7 @@
 
 .contactInfo i {
   margin-right: 1rem;
-  color: var(--primary-color);
+  color: var(--footer-icon-color, #3498db);
 }
 
 .copyright {
