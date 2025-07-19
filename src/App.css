@@ -1,7 +1,15 @@
 /* App Component */
+.App {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 .app-content {
+  flex: 1;
   padding: 80px 2rem 2rem;
-  min-height: calc(100vh - 80px);
   background-color: var(--bg-color);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -39,7 +47,7 @@
   --text-light: #7f8c8d;
   --bg-light: #f8f9fa;
   --bg-color: #ffffff;
-  --bg-secondary: #f8f9fa;
+  --bg-secondary: #c4c5c7;
   --gray: #ecf0f1;
   --dark-gray: #95a5a6;
   --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
