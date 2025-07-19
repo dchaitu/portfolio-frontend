@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
 import './Home.css';
+import {subheading} from "../../constants/Constants";
 
 const Home = () => {
   const { theme } = useTheme();
@@ -63,7 +64,7 @@ const Home = () => {
             Hi, I'm <span className="highlight">{text}</span>
           </h1>
           <p className="subtitle">
-            A passionate developer building amazing web experiences
+            {subheading}
           </p>
           <div className="cta-buttons">
             <Link to="/contact" className="primary-button">

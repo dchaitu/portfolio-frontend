@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useTheme } from '../../context/ThemeContext';
-import { contactDetails } from '../../constants/Constants';
+import {contactDetails, siteKey} from '../../constants/Constants';
 import Social from '../Social/Social';
 import './Contact.css';
+import ReCAPTCHA from "react-google-recaptcha";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: '',
@@ -12,6 +13,7 @@ const Contact = () => {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState({ success: false, message: '' });
+  const [recaptchaValue, setRecaptchaValue] = useState(null);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -21,33 +23,56 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      console.log('Form submitted:', formData);
-      setIsSubmitting(false);
+    setSubmitStatus({ success: false, message: '' });
+
+    try{
+      const res = await fetch("https://t5nfirnhxl.execute-api.us-east-1.amazonaws.com/dev/contact/", {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          recaptcha_token: recaptchaValue,
+        })
+      });
+      if (!res.ok) {
+        throw new Error(`HTTP error! status: ${res.status}`);
+      }
+      const data = await res.json();
+      console.log("Data from Contact Component "+data);
       setSubmitStatus({
         success: true,
-        message: 'Your message has been sent successfully! I will get back to you soon.'
+        message: data.message || 'Your message has been sent successfully! I will get back to you soon.',
       });
-      
-      // Reset form
+
       setFormData({
         name: '',
         email: '',
         subject: '',
-        message: ''
+        message: '',
       });
-      
-      // Reset status after 5 seconds
       setTimeout(() => {
         setSubmitStatus({ success: false, message: '' });
       }, 5000);
-      
-    }, 1500);
+    } catch (error) {
+      console.error("Error submitting form",error);
+      setSubmitStatus({
+        success: false,
+        message: 'Failed to send message. Please try again later.',
+      });
+
+    }finally {
+      setIsSubmitting(false);
+    }
+
   };
 
   const { theme } = useTheme();
@@ -169,11 +194,13 @@ const Contact = () => {
                   required
                 ></textarea>
               </div>
-              
-              <button 
+              <div className="form-group">
+                <ReCAPTCHA sitekey={siteKey} onChange={(value) => setRecaptchaValue(value)} />
+
+              <button
                 type="submit" 
                 className="btn-submit" 
-                disabled={isSubmitting}
+                disabled={!recaptchaValue}
               >
                 {isSubmitting ? (
                   <>
@@ -182,6 +209,7 @@ const Contact = () => {
                   </>
                 ) : 'Send Message'}
               </button>
+              </div>
             </form>
           </div>
         </div>

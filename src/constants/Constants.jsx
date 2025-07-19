@@ -22,6 +22,7 @@ export const aboutDetails = {
 
 }
 
+export const subheading = "A passionate developer with experience in various technologies and frameworks"
 
 export const projects = [
     {
@@ -30,7 +31,7 @@ export const projects = [
       description: 'As the ant queen, you populate your colony with the bravest ants you can muster. Your ants must protect their queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and your queen will succumb to the bees wrath',
       technologies: ['Flutter', 'Dart', 'Riverpod'],
       image: '/images/ants_bees.png',
-      link:"",
+      link:"https://game.chaitanyadokara.in",
     },
     {
       id: 2,
@@ -75,3 +76,5 @@ export const skills = [
   {name:"No Code",technologies:no_code},
 
 ];
+
+export const siteKey = '6Ld9gIgrAAAAAMlMgBMD3o9m46KGQPJ-36QlUKAu'
