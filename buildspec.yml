@@ -16,7 +16,7 @@ phases:
   post_build:
     commands:
       - echo Uploading code to S3...
-      - aws s3 sync build/ s3:::chaitanya-resume-react --delete
+      - aws s3 sync build/ s3://chaitanya-resume-react --delete
 artifacts:
   files:
     - '**/*'
