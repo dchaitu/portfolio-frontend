@@ -1,156 +1,52 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useTheme } from '../../context/ThemeContext';
-import ThemeToggle from '../ThemeToggle/ThemeToggle'; 
-
-// CSS file removed in favor of inline styles
+import ThemeToggle from '../ThemeToggle/ThemeToggle';
+import { HiMenu } from "react-icons/hi";
+import { IoClose } from "react-icons/io5";
 
 const Navbar = () => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { theme } = useTheme(); // Assumes theme.navBg and theme.navText are Tailwind class names
 
   const toggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
-
-  const { theme } = useTheme();
-  
-  const navStyles = {
-    backgroundColor: theme.navBg,
-    padding: '1rem 2rem',
-    position: 'fixed',
-    width: '100%',
-    top: 0,
-    zIndex: 1000,
-    boxShadow: theme.boxShadow,
-    transition: 'background-color 0.3s ease, box-shadow 0.3s ease',
-  };
-
-  const navContainerStyles = {
-    maxWidth: '1200px',
-    margin: '0 auto',
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-  };
-
-  const logoStyles = {
-    color: theme.navText,
-    fontSize: '1.5rem',
-    fontWeight: 700,
-    transition: 'color 0.3s ease',
-    textDecoration: 'none',
-  };
-
-  const navLinksStyles = {
-    display: 'flex',
-    gap: '2rem',
-    alignItems: 'center',
-  };
-
-  const linkStyles = {
-    color: theme.navText,
-    textDecoration: 'none',
-    fontWeight: 500,
-    transition: 'color 0.3s ease, background-color 0.3s ease',
-    padding: '0.5rem 1rem',
-    borderRadius: '4px',
-  };
-
-  const linkHoverStyles = {
-    color: theme.primaryColor,
-    backgroundColor: theme.hoverBg,
+    setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <nav style={navStyles}>
-      <div style={navContainerStyles}>
-        <Link 
-          to="/" 
-          onClick={() => setIsOpen(false)} 
-          style={logoStyles}
-        >
-          Chaitanya Bharat
-        </Link>
-        
-        <div style={navLinksStyles}>
-          <Link 
-            to="/about" 
-            onClick={() => setIsOpen(false)}
-            style={linkStyles}
-          >
-            About
+      <nav className={`fixed top-0 left-0 w-full z-50 ${theme.navBg} shadow-md transition duration-300`}>
+        <div className="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+          {/* Logo */}
+          <Link to="/" className={`text-xl font-bold ${theme.navText}`}>
+            Chaitanya Bharat
           </Link>
-          <Link 
-            to="/skills" 
-            onClick={() => setIsOpen(false)}
-            style={linkStyles}
-          >
-            Skills
-          </Link>
-          <Link 
-            to="/projects" 
-            onClick={() => setIsOpen(false)}
-            style={linkStyles}
-          >
-            Projects
-          </Link>
-          <Link 
-            to="/contact" 
-            onClick={() => setIsOpen(false)}
-            style={linkStyles}
-          >
-            Contact
-          </Link>
-          <ThemeToggle />
+
+          {/* Desktop Navigation */}
+          <div className="hidden md:flex gap-6 items-center">
+            <Link to="/about" className={`${theme.navText}`}>About</Link>
+            <Link to="/skills" className={`${theme.navText}`}>Skills</Link>
+            <Link to="/projects" className={`${theme.navText}`}>Projects</Link>
+            <Link to="/contact" className={`${theme.navText}`}>Contact</Link>
+            <ThemeToggle />
+          </div>
+
+          {/* Mobile Hamburger */}
+          <div onClick={toggleMenu} className="md:hidden cursor-pointer text-white z-50">
+            {isMenuOpen ? <IoClose size={28} /> : <HiMenu size={28} />}
+          </div>
         </div>
-        
-        <div 
-          style={{
-            display: 'none',
-            flexDirection: 'column',
-            cursor: 'pointer',
-            zIndex: 1001,
-            ...(isOpen && {
-              '& span': {
-                backgroundColor: theme.primaryColor,
-              },
-              '& span:first-child': {
-                transform: 'rotate(45deg) translate(5px, 5px)',
-              },
-              '& span:nth-child(2)': {
-                opacity: 0,
-              },
-              '& span:last-child': {
-                transform: 'rotate(-45deg) translate(5px, -5px)',
-              },
-            }),
-          }} 
-          onClick={toggleMenu}
-        >
-          <span style={{
-            width: '25px',
-            height: '3px',
-            backgroundColor: theme.navText,
-            margin: '3px 0',
-            transition: 'all 0.3s ease',
-          }}></span>
-          <span style={{
-            width: '25px',
-            height: '3px',
-            backgroundColor: theme.navText,
-            margin: '3px 0',
-            transition: 'all 0.3s ease',
-          }}></span>
-          <span style={{
-            width: '25px',
-            height: '3px',
-            backgroundColor: theme.navText,
-            margin: '3px 0',
-            transition: 'all 0.3s ease',
-          }}></span>
-        </div>
-      </div>
-    </nav>
+
+        {/* Mobile Navigation Menu */}
+        {isMenuOpen && (
+            <div className="md:hidden fixed top-0 left-0 w-full h-screen bg-gray-900 flex flex-col items-center justify-center gap-6 text-white text-lg z-40">
+              <Link to="/about" onClick={toggleMenu}>About</Link>
+              <Link to="/skills" onClick={toggleMenu}>Skills</Link>
+              <Link to="/projects" onClick={toggleMenu}>Projects</Link>
+              <Link to="/contact" onClick={toggleMenu}>Contact</Link>
+              <ThemeToggle />
+            </div>
+        )}
+      </nav>
   );
 };
 

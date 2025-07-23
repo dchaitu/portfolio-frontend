@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTheme } from '../../context/ThemeContext';
 import { FiSun, FiMoon } from 'react-icons/fi';
-
+// TODO: change toggle button
 const ThemeToggle = () => {
   const { isDarkMode, toggleTheme, theme } = useTheme();
 
