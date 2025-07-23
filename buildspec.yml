@@ -11,6 +11,12 @@ phases:
     commands:
       - echo Starting build...
       - npm run build
+      - echo "Creating CloudFront Invalidation..."
+      - aws cloudfront create-invalidation --distribution-id E37DC6ISUMVEY0 --paths "/*"
+  post_build:
+    commands:
+      - echo Uploading code to S3...
+      - aws s3 sync build/ s3:::chaitanya-resume-react --delete
 artifacts:
   files:
     - '**/*'
