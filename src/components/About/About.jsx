@@ -53,6 +53,8 @@ const About = () => {
                 <span className="detail-value">{contactDetails.location}</span>
               </div>
             </div>
+            <a href="/files/ChaitanyaDokara_Resume.pdf" target="_blank" rel="noopener noreferrer" className="btn btn-primary">Resume</a>
+
           </div>
         </div>
       </div>
