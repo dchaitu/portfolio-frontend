@@ -8,15 +8,15 @@ const Footer = () => {
   const { theme } = useTheme();
 
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 py-12 mt-auto border-t border-gray-200 dark:border-gray-700">
+    <footer className={`${theme.backgroundColor} ${theme.navText} py-12 mt-auto border-t ${theme.borderColor}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
           <div>
-            <h3 className="text-2xl font-bold text-gray-800 dark:text-white mb-6">{contactDetails.name}</h3>
+            <h3 className={`text-2xl font-bold ${theme.navText} mb-6`}>{contactDetails.name}</h3>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold uppercase tracking-wider text-gray-800 dark:text-white mb-6 relative pb-3">
+            <h4 className={`text-lg font-semibold uppercase tracking-wider ${theme.navText} mb-6 relative pb-3`}>
               Quick Links
               <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-blue-500"></span>
             </h4>
@@ -30,7 +30,7 @@ const Footer = () => {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold uppercase tracking-wider text-gray-800 dark:text-white mb-6 relative pb-3">
+            <h4 className={`text-lg font-semibold uppercase tracking-wider ${theme.navText} mb-6 relative pb-3`}>
               Contact Info
               <span className="absolute bottom-0 left-0 w-10 h-0.5 bg-blue-500"></span>
             </h4>

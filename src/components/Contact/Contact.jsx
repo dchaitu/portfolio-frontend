@@ -96,7 +96,7 @@ const Contact = () => {
               Contact Information
               <div className="absolute left-0 bottom-0 w-16 h-1 bg-blue-500"></div>
             </h3>
-            <p className="mb-8 leading-relaxed text-gray-600 dark:text-gray-400">Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible!</p>
+            <p className="mb-8 leading-relaxed text-gray-600 dark:text-gray-100">Feel free to reach out to me for any questions or opportunities. I'll get back to you as soon as possible!</p>
             
             <div className="flex items-start mb-5">
               <i className="fas fa-envelope text-blue-500 mr-4 mt-1"></i>

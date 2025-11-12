@@ -9,7 +9,7 @@ const About = () => {
     <section id="about" className={`py-24 ${theme.backgroundColor} transition-colors duration-300`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h2 className="text-4xl font-bold mb-12 relative inline-block text-gray-800 dark:text-gray-200">
+          <h2 className={`text-4xl font-bold mb-12 relative inline-block ${theme.navText}`}>
             About <span className="text-blue-500">Me</span>
             <div className="absolute w-20 h-1 bg-blue-500 bottom-[-10px] left-1/2 -translate-x-1/2 rounded-sm"></div>
           </h2>
@@ -23,7 +23,7 @@ const About = () => {
             />
           </div>
           <div className="flex-[1.5] text-center md:text-left">
-            <h3 className="text-3xl font-bold mb-6 text-gray-800 dark:text-gray-200">{contactDetails.role}</h3>
+            <h3 className={`text-3xl font-bold mb-6 ${theme.navText}`}>{contactDetails.role}</h3>
             <p className={`${theme.textColor} leading-loose mb-6 text-lg`}>Hi, I'm {contactDetails.fullName}. {contactDetails.about}</p>
             <p className={`${theme.textColor} leading-loose mb-6 text-lg`}>{contactDetails.completeBio}</p>
             <ContactDetails />

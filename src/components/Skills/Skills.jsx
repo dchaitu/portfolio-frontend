@@ -22,7 +22,7 @@ const Skills = () => {
           {skills.map((category, index) => (
             <div key={index} className={`${theme.lightBg} rounded-lg shadow-lg p-6 transform transition-transform duration-300 hover:-translate-y-2`}>
               <div className="text-center mb-6">
-                <h3 className="text-2xl font-bold text-gray-800 dark:text-white relative inline-block pb-2">
+                <h3 className={`text-2xl font-bold ${theme.navText} relative inline-block pb-2`}>
                   {category.name}
                   <div className="absolute w-1/2 h-1 bg-blue-500 bottom-0 left-1/2 -translate-x-1/2 rounded-sm"></div>
                 </h3>
