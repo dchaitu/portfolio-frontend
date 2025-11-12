@@ -31,7 +31,7 @@ export const projects = [
       description: 'As the ant queen, you populate your colony with the bravest ants you can muster. Your ants must protect their queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and your queen will succumb to the bees wrath',
       technologies: ['Flutter', 'Dart', 'Riverpod'],
       image: '/images/ants_bees.png',
-      link:"https://game.chaitanyadokara.in",
+      link:"https://game.chaitanyadokara.in/",
     },
     {
       id: 2,
@@ -39,7 +39,7 @@ export const projects = [
       description: 'A task management application to help users organize their daily tasks and increase productivity.',
       technologies: ['React', 'Django', 'REST API'],
       image: '/images/tasks.png',
-      link:"",
+      link:"https://tasks.chaitanyadokara.in/",
     },
     {
       id: 3,
@@ -48,7 +48,23 @@ export const projects = [
       technologies: ['Flutter', 'Dart', 'Riverpod', "AWS","DynamoDB"],
       image: '/images/wordle.png',
       link:"https://wordle.chaitanyadokara.in/",
-    }
+    },
+    {
+        id: 4,
+        title: 'Slack clone App',
+        description: 'A chat application to help users to create rooms and chat with their friends. It includes messaging, replying, reacting with emojis file transferring, requesting users to join a room. And Admin allowing users to join the room and removing users from the room.',
+        technologies: ['React', 'Fast API', 'REST API'],
+        image: '/images/chat.png',
+        link:"https://chat.chaitanyadokara.in/",
+    },
+    {
+        id: 5,
+        title: 'Forms clone App',
+        description: 'Form clone app helps in creating forms for users sections questions, selecting different types of questions and storing responses and returning the responses in csv.',
+        technologies: ['React', 'Fast API', 'REST API'],
+        image: '/images/forms.png',
+        link:"https://forms.chaitanyadokara.in/",
+    },
   ];
 
 
@@ -77,4 +93,5 @@ export const skills = [
 
 ];
 
-export const siteKey = '6Ld9gIgrAAAAAMlMgBMD3o9m46KGQPJ-36QlUKAu'
+export const siteKey = "6Lcp4Y0rAAAAAD_kq7y5aB5QlfGM5QLlbxywSlBu";
+export const secretKey = "6Lcp4Y0rAAAAAMx574CaTgPELQT7aT24Aprreo84";

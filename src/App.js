@@ -9,7 +9,6 @@ import Skills from './components/Skills/Skills';
 import Projects from './components/Projects/Projects';
 import Contact from './components/Contact/Contact';
 import Footer from './components/Footer/Footer';
-import './App.css';
 
 function App() {
   const [showScroll, setShowScroll] = useState(false);
@@ -34,9 +33,9 @@ function App() {
   return (
     <ThemeProvider>
       <Router>
-        <div className="App">
+        <div className="flex flex-col min-h-screen transition-colors duration-300">
           <Navbar />
-          <div className="app-content">
+          <main className="flex-grow pt-20">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/about" element={<About />} />
@@ -44,14 +43,14 @@ function App() {
               <Route path="/projects" element={<Projects />} />
               <Route path="/contact" element={<Contact />} />
             </Routes>
-          </div>
+          </main>
           <Footer />
           
           {/* Scroll to Top Button */}
           {showScroll && (
             <button 
               onClick={scrollToTop} 
-              className="scroll-to-top"
+              className="fixed bottom-8 right-8 w-12 h-12 rounded-full bg-blue-500 text-white flex items-center justify-center shadow-lg transition-all duration-300 hover:bg-blue-600 hover:scale-110"
               aria-label="Scroll to top"
             >
               <FaArrowUp />

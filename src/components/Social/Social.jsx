@@ -4,7 +4,7 @@ import { SiUpwork } from "react-icons/si";
 
 const Social = () => {
     return (
-        <div className="social-links">
+        <div className="flex flex-row gap-4">
             <a href={socialLinks.github} target="_blank" rel="noopener noreferrer" aria-label="GitHub">
                 <FaGithub />
             </a>
