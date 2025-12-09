@@ -7,7 +7,7 @@ export const contactDetails = {
     experience:"4 Years",
     fullName:"Chaitanya Bharat Dokara",
     photo:"https://chaitanya-website-portfolio.s3.eu-north-1.amazonaws.com/chaitu_pic.jpg",
-    completeBio:"I have completed my B.tech in GITAM University with 8.22 GPA. I started my career as a Content Developer at IBHubs from 2020. Here I have worked in creating problem statements, hints and solutions in python language. After I have worked as a Flutter App Developer with Riverpod. Then I worked as Python Backend Developer using Django framework and created REST APIs for projects and also then created functionality tests using Pytest and did API tests using Postman. Iam also a certified Cloud Practitioner. I have Built full stack web applications using ReactJS, Bootstrap, Tailwind and Django frameworks.  I also built mobile applications using Flutter. For a small duration I worked as Quality Tester for Content Translation."
+    completeBio:"I have completed my B.tech in GITAM University with 8.22 GPA. I started my career as a Content Developer at IBHubs from 2020. Here I have worked in creating problem statements, hints and solutions in python language also during that period I also worked as Python Backend Developer using Django framework and created REST APIs for projects and also then created functionality tests using Pytest and did API tests using Postman. Iam also a certified Cloud Practitioner. I have Built full stack web applications using ReactJS, Bootstrap, Tailwind and Django frameworks.  I also built mobile applications using Flutter. After I have worked as a Flutter App Developer with Riverpod state management. For a small duration I worked as Quality Tester for Content Translation."
 
   }
 
@@ -26,7 +26,23 @@ export const subheading = "A passionate developer with experience in various tec
 
 export const projects = [
     {
-      id: 1,
+        id: 1,
+        title: 'Slack clone App',
+        description: 'A chat application to help users to create rooms and chat with their friends. It includes messaging, replying, reacting with emojis file transferring, requesting users to join a room. And Admin allowing users to join the room and removing users from the room.',
+        technologies: ['React JS', 'Fast API', 'REST API','AWS'],
+        image: '/images/chat.png',
+        link:"https://chat.chaitanyadokara.in/",
+    },
+    {
+        id: 2,
+        title: 'Forms clone App',
+        description: 'Form clone app helps in creating forms for users sections questions, selecting different types of questions and storing responses and returning the responses in csv.',
+        technologies: ['React JS', 'Fast API', 'REST API','AWS'],
+        image: '/images/forms.png',
+        link:"https://forms.chaitanyadokara.in/",
+    },
+    {
+      id: 3,
       title: 'Ants vs Bees',
       description: 'As the ant queen, you populate your colony with the bravest ants you can muster. Your ants must protect their queen from the evil bees that invade your territory. Irritate the bees enough by throwing leaves at them, and they will be vanquished. Fail to pester the airborne intruders adequately, and your queen will succumb to the bees wrath',
       technologies: ['Flutter', 'Dart', 'Riverpod'],
@@ -34,37 +50,22 @@ export const projects = [
       link:"https://game.chaitanyadokara.in/",
     },
     {
-      id: 2,
+      id: 4,
       title: 'Task Management App',
       description: 'A task management application to help users organize their daily tasks and increase productivity.',
-      technologies: ['React', 'Django', 'REST API'],
+      technologies: ['React', 'Django', 'REST API','AWS'],
       image: '/images/tasks.png',
       link:"https://tasks.chaitanyadokara.in/",
     },
     {
-      id: 3,
+      id: 5,
       title: 'Wordle',
       description: 'A word-guessing game where players try to guess a hidden word in a limited number of attempts.',
       technologies: ['Flutter', 'Dart', 'Riverpod', "AWS","DynamoDB"],
       image: '/images/wordle.png',
       link:"https://wordle.chaitanyadokara.in/",
     },
-    {
-        id: 4,
-        title: 'Slack clone App',
-        description: 'A chat application to help users to create rooms and chat with their friends. It includes messaging, replying, reacting with emojis file transferring, requesting users to join a room. And Admin allowing users to join the room and removing users from the room.',
-        technologies: ['React', 'Fast API', 'REST API'],
-        image: '/images/chat.png',
-        link:"https://chat.chaitanyadokara.in/",
-    },
-    {
-        id: 5,
-        title: 'Forms clone App',
-        description: 'Form clone app helps in creating forms for users sections questions, selecting different types of questions and storing responses and returning the responses in csv.',
-        technologies: ['React', 'Fast API', 'REST API'],
-        image: '/images/forms.png',
-        link:"https://forms.chaitanyadokara.in/",
-    },
+
   ];
 
 
